@@ -61,9 +61,11 @@ const MainView = function () {
     return (
         <div className='app-container'>
             <div className='menu-container'>
+
+                <TransportTypes />
                 <div className='table-container'>
 
-                    <TransportTypes />
+
 
                     <Table striped bordered hover>
                         <thead>
