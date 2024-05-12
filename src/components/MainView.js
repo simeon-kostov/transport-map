@@ -26,7 +26,7 @@ const MainView = function () {
     // Acquire All Lines
     useEffect(() => {
         dispatch(fetchLinesData());
-        //    console.log(lines)
+        // console.log(lines)
     }, [dispatch]);
 
 
@@ -99,7 +99,7 @@ const MainView = function () {
                 </div>
             </div>
             <div className='map-container'>
-                <MapContainer center={[42.6797, 23.3271]} zoom={13} scrollWheelZoom={true}>
+                <MapContainer center={[42.6797, 23.3271]} zoom={13} scrollWheelZoom={true} minZoom={12}>
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -109,14 +109,14 @@ const MainView = function () {
                         && lines.filter(line => line.routes[0].transportType === selectedTransportType.code)
                             .map((line, index) => {
                                 return (
-                                    <Line line={line} key={index} />
+                                    <Line line={line} key={index} lineId={line.line} />
                                 )
                             })
                     }
 
                     {!selectedTransportType && lines.map((line, index) => {
                         return (
-                            <Line line={line} key={index} />
+                            <Line line={line} key={index} lineId={line.line} />
                         )
                     })
                     }

@@ -4,18 +4,21 @@ const initialState = {
             id: 1,
             code: "A",
             name: "Автобуси",
+            color: 'blue',
             selected: false,
         },
         {
             id: 2,
             code: "TB",
             name: "Тролеи",
+            color: 'red',
             selected: false,
         },
         {
             id: 3,
             code: "TM",
             name: "Трамваи",
+            color: 'purple',
             selected: false,
         },
 
